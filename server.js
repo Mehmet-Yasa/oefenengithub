@@ -33,7 +33,7 @@ app.get("/dashboard", dashboard);
 async function startServer() {
   try {
     await client.connect();
-    console.log("✅ Verbonden met MongoDB");
+    console.log("Verbonden met MongoDB");
  
     const db = client.db("project-test"); // <-- pas aan als jouw db anders heet
     usersCollection = db.collection("users");
@@ -42,13 +42,12 @@ async function startServer() {
       console.log("server is running on http://localhost:3000");
     });
   } catch (error) {
-    console.error("❌ Database connectie mislukt:", error);
+    console.error("Database connectie mislukt:", error);
   }
 }
  
 startServer();
  
-// Controllers
 function home(req, res) {
   res.send("Hello world");
 }
